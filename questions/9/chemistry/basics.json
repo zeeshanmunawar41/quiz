@@ -1,0 +1,52 @@
+{
+  "subject": "Chemistry",
+  "class": "9",
+  "chapter": "Basics",
+  "questions": [
+    {
+      "question": "What is the chemical symbol for water?",
+      "questionUr": "پانی کی کیمیائی علامت کیا ہے؟",
+      "options": ["CO2", "H2O", "O2", "NaCl"],
+      "correctIndex": 1,
+      "difficulty": "Easy",
+      "explanation": "Water is H2O (two hydrogen atoms and one oxygen atom).",
+      "explanationUr": "پانی H2O ہے (دو ہائیڈروجن اور ایک آکسیجن کا ایٹم)۔"
+    },
+    {
+      "question": "Which gas is most abundant in the air?",
+      "questionUr": "ہوا میں سب سے زیادہ کون سی گیس موجود ہے؟",
+      "options": ["Oxygen", "Nitrogen", "Carbon dioxide", "Hydrogen"],
+      "correctIndex": 1,
+      "difficulty": "Easy",
+      "explanation": "Nitrogen makes up about 78% of the Earth's atmosphere.",
+      "explanationUr": "نائٹروجن زمین کے ماحول کا تقریباً 78٪ حصہ بناتی ہے۔"
+    },
+    {
+      "question": "The smallest unit of an element is:",
+      "questionUr": "عنصر کی سب سے چھوٹی اکائی کیا ہے؟",
+      "options": ["Molecule", "Atom", "Cell", "Compound"],
+      "correctIndex": 1,
+      "difficulty": "Easy",
+      "explanation": "An atom is the smallest unit of an element that retains its properties.",
+      "explanationUr": "ایٹم عنصر کی سب سے چھوٹی اکائی ہے جو اس کی خصوصیات برقرار رکھتی ہے۔"
+    },
+    {
+      "question": "pH value of a neutral solution is:",
+      "questionUr": "غیر تیزابی (neutral) محلول کا pH قیمت ہے:",
+      "options": ["0", "7", "14", "1"],
+      "correctIndex": 1,
+      "difficulty": "Medium",
+      "explanation": "A neutral solution has pH = 7 at 25°C.",
+      "explanationUr": "غیر تیزابی محلول کا pH = 7 ہوتا ہے 25°C پر۔"
+    },
+    {
+      "question": "Which of these is a compound?",
+      "questionUr": "ان میں سے کون سا مرکب ہے؟",
+      "options": ["Oxygen", "Gold", "Salt (NaCl)", "Hydrogen"],
+      "correctIndex": 2,
+      "difficulty": "Medium",
+      "explanation": "NaCl is formed by chemically combining sodium and chlorine.",
+      "explanationUr": "NaCl سوڈیم اور کلورین کے کیمیائی ملاپ سے بنتا ہے۔"
+    }
+  ]
+}

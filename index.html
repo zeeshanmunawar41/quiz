@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Free bilingual MCQ quiz platform for Pakistan Secondary Classes 9 & 10" />
+  <title>Quiz Platform | انعام پلیٹ فارم</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="app-header">
+    <div class="brand">
+      <span class="brand-en">Quiz Platform</span>
+      <span class="brand-ur">کوئز پلیٹ فارم</span>
+    </div>
+    <div class="header-actions">
+      <button id="langToggle" class="btn btn-ghost" aria-label="Toggle language">اردو</button>
+    </div>
+  </header>
+
+  <main id="app">
+    <!-- Welcome Screen -->
+    <section id="welcome" class="screen active">
+      <div class="welcome-card">
+        <h1 class="welcome-title" data-i18n="welcome_title">Welcome to the Quiz Platform</h1>
+        <p class="welcome-sub" data-i18n="welcome_sub">Practice MCQs for Class 9 & 10 — English & Urdu</p>
+        <div class="welcome-actions">
+          <button id="guestBtn" class="btn btn-primary" data-i18n="continue_guest">Continue as Guest</button>
+          <button id="loginBtn" class="btn btn-secondary" data-i18n="login">Login / Register</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Auth Screen -->
+    <section id="auth" class="screen">
+      <div class="auth-card">
+        <h2 data-i18n="auth_title">Student Login</h2>
+        <form id="authForm">
+          <label>
+            <span data-i18n="email">Email</span>
+            <input type="email" id="authEmail" required autocomplete="email" />
+          </label>
+          <label>
+            <span data-i18n="password">Password</span>
+            <input type="password" id="authPassword" required autocomplete="current-password" minlength="6" />
+          </label>
+          <div class="auth-actions">
+            <button type="submit" id="authSubmit" class="btn btn-primary" data-i18n="login">Login</button>
+            <button type="button" id="authToggleMode" class="btn btn-ghost" data-i18n="need_account">Need an account? Register</button>
+          </div>
+          <p id="authMsg" class="msg" role="alert"></p>
+        </form>
+        <button class="btn btn-link back-btn" data-target="welcome" data-i18n="back">Back</button>
+      </div>
+    </section>
+
+    <!-- Class Selection -->
+    <section id="classSelect" class="screen">
+      <h2 data-i18n="choose_class">Choose Your Class</h2>
+      <div class="grid grid-2">
+        <button class="card-select" data-class="9">
+          <span class="card-big">9</span>
+          <span class="card-label" data-i18n="class_9">Class 9</span>
+        </button>
+        <button class="card-select" data-class="10">
+          <span class="card-big">10</span>
+          <span class="card-label" data-i18n="class_10">Class 10</span>
+        </button>
+      </div>
+      <button class="btn btn-link back-btn" data-target="welcome" data-i18n="back">Back</button>
+    </section>
+
+    <!-- Subject Selection -->
+    <section id="subjectSelect" class="screen">
+      <h2 data-i18n="choose_subject">Choose Subject</h2>
+      <div id="subjectList" class="grid grid-2"></div>
+      <button class="btn btn-link back-btn" data-target="classSelect" data-i18n="back">Back</button>
+    </section>
+
+    <!-- Chapter Selection -->
+    <section id="chapterSelect" class="screen">
+      <h2 data-i18n="choose_chapter">Choose Chapter</h2>
+      <div id="chapterList" class="grid grid-2"></div>
+      <button class="btn btn-link back-btn" data-target="subjectSelect" data-i18n="back">Back</button>
+    </section>
+
+    <!-- Quiz Config -->
+    <section id="quizConfig" class="screen">
+      <h2 data-i18n="quiz_settings">Quiz Settings</h2>
+      <label>
+        <span data-i18n="num_questions">Number of Questions</span>
+        <select id="numQuestions"></select>
+      </label>
+      <label>
+        <span data-i18n="difficulty">Difficulty</span>
+        <select id="difficulty">
+          <option value="all" data-i18n="diff_all">All</option>
+          <option value="Easy" data-i18n="diff_easy">Easy</option>
+          <option value="Medium" data-i18n="diff_medium">Medium</option>
+          <option value="Hard" data-i18n="diff_hard">Hard</option>
+        </select>
+      </label>
+      <div class="welcome-actions">
+        <button id="startQuizBtn" class="btn btn-primary" data-i18n="start_quiz">Start Quiz</button>
+      </div>
+      <button class="btn btn-link back-btn" data-target="chapterSelect" data-i18n="back">Back</button>
+    </section>
+
+    <!-- Quiz Screen -->
+    <section id="quiz" class="screen">
+      <div class="quiz-top">
+        <div class="quiz-progress">
+          <div id="progressBar" class="progress-bar"></div>
+        </div>
+        <div class="quiz-meta">
+          <span id="qCounter">1/10</span>
+          <span id="timer" class="timer">60</span>
+        </div>
+      </div>
+      <div id="questionBox" class="question-box"></div>
+      <div id="optionsBox" class="options-box"></div>
+      <div class="quiz-actions">
+        <button id="skipBtn" class="btn btn-ghost" data-i18n="skip">Skip</button>
+        <button id="nextBtn" class="btn btn-primary" data-i18n="next">Next</button>
+      </div>
+    </section>
+
+    <!-- Results Screen -->
+    <section id="results" class="screen">
+      <h2 data-i18n="results_title">Results</h2>
+      <div id="resultSummary" class="result-summary"></div>
+      <div id="reviewBox" class="review-box"></div>
+      <div class="welcome-actions">
+        <button id="toDashboardBtn" class="btn btn-primary" data-i18n="view_dashboard">View Dashboard</button>
+        <button id="retryBtn" class="btn btn-secondary" data-i18n="retry">Retry</button>
+      </div>
+    </section>
+
+    <!-- Dashboard Screen -->
+    <section id="dashboard" class="screen">
+      <h2 data-i18n="dashboard_title">Dashboard</h2>
+      <div id="dashStats" class="dash-stats"></div>
+      <h3 data-i18n="quiz_history">Quiz History</h3>
+      <div id="dashHistory" class="dash-history"></div>
+      <button id="logoutBtn" class="btn btn-ghost" data-i18n="logout">Logout</button>
+      <button class="btn btn-link back-btn" data-target="welcome" data-i18n="back_home">Back Home</button>
+    </section>
+  </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/config.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/quiz.js"></script>
+  <script src="js/dashboard.js"></script>
+  <script src="js/app.js"></script>
+  <script src="sw-register.js"></script>
+</body>
+</html>

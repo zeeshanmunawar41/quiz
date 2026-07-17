@@ -1,0 +1,61 @@
+{
+  "subject": "English",
+  "class": "9",
+  "chapter": "Grammar",
+  "questions": [
+    {
+      "question": "Which part of speech is the word 'quickly'?",
+      "questionUr": "لفظ 'quickly' کس حصہ گفتار سے تعلق رکھتا ہے؟",
+      "options": ["Noun", "Adverb", "Verb", "Pronoun"],
+      "correctIndex": 1,
+      "difficulty": "Easy",
+      "explanation": "'Quickly' describes how an action is done, so it is an adverb.",
+      "explanationUr": "'Quickly' بتاتا ہے کہ کام کیسے ہوا، اس لیے یہ ظرف ہے۔"
+    },
+    {
+      "question": "Choose the correct tense: 'She ___ to school every day.'",
+      "questionUr": "صحیح زمانہ منتخب کریں: 'She ___ to school every day.'",
+      "options": ["go", "goes", "gone", "going"],
+      "correctIndex": 1,
+      "difficulty": "Easy",
+      "explanation": "With third-person singular 'she', the present simple verb takes 'goes'.",
+      "explanationUr": "تیسرے فرد واحد 'she' کے ساتھ حال سادہ فعل 'goes' آتا ہے۔"
+    },
+    {
+      "question": "Identify the synonym of 'happy'.",
+      "questionUr": "'happy' کا مترادف الفاظ پہچانیں۔",
+      "options": ["Sad", "Glad", "Angry", "Tired"],
+      "correctIndex": 1,
+      "difficulty": "Medium",
+      "explanation": "'Glad' means the same as 'happy'.",
+      "explanationUr": "'Glad' کا مطلب 'happy' کے برابر ہے۔"
+    },
+    {
+      "question": "What is the plural of 'child'?",
+      "questionUr": "'child' کی جمع کیا ہے؟",
+      "options": ["Childs", "Children", "Childes", "Childrens"],
+      "correctIndex": 1,
+      "difficulty": "Easy",
+      "explanation": "'Child' is an irregular noun; its plural is 'children'.",
+      "explanationUr": "'Child' ایک غیر معمولی اسم ہے؛ اس کی جمع 'children' ہے۔"
+    },
+    {
+      "question": "Choose the correct article: 'He is ___ honest man.'",
+      "questionUr": "صحیح Article منتخب کریں: 'He is ___ honest man.'",
+      "options": ["a", "an", "the", "no article"],
+      "correctIndex": 1,
+      "difficulty": "Medium",
+      "explanation": "Use 'an' before a vowel sound; 'honest' starts with a vowel sound.",
+      "explanationUr": "حرف صدا سے پہلے 'an' آتا ہے؛ 'honest' صدا سے شروع ہوتا ہے۔"
+    },
+    {
+      "question": "Which sentence is in passive voice?",
+      "questionUr": "کون سا جملہ مجہول میں ہے؟",
+      "options": ["He ate the apple.", "The apple was eaten by him.", "They play football.", "She writes a letter."],
+      "correctIndex": 1,
+      "difficulty": "Hard",
+      "explanation": "Passive voice places the object first with a form of 'be' + past participle.",
+      "explanationUr": "مجہول میں فاعل کی جگہ مفعول آتا ہے اور 'be' + ماضی کا اسم صفت استعمال ہوتا ہے۔"
+    }
+  ]
+}

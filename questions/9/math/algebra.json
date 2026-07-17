@@ -1,0 +1,52 @@
+{
+  "subject": "Mathematics",
+  "class": "9",
+  "chapter": "Algebra",
+  "questions": [
+    {
+      "question": "Solve: 2x + 4 = 10",
+      "questionUr": "حل کریں: 2x + 4 = 10",
+      "options": ["x = 2", "x = 3", "x = 4", "x = 5"],
+      "correctIndex": 1,
+      "difficulty": "Easy",
+      "explanation": "2x = 6, so x = 3.",
+      "explanationUr": "2x = 6، اس لیے x = 3۔"
+    },
+    {
+      "question": "What is the value of x² when x = 5?",
+      "questionUr": "x² کی قیمت کیا ہے جب x = 5؟",
+      "options": ["10", "25", "15", "20"],
+      "correctIndex": 1,
+      "difficulty": "Easy",
+      "explanation": "5² = 25.",
+      "explanationUr": "5² = 25۔"
+    },
+    {
+      "question": "Factorize: x² - 9",
+      "questionUr": "تجزیہ کریں: x² - 9",
+      "options": ["(x-3)(x-3)", "(x+3)(x+3)", "(x-3)(x+3)", "x(x-9)"],
+      "correctIndex": 2,
+      "difficulty": "Medium",
+      "explanation": "Difference of squares: x² - 9 = (x-3)(x+3).",
+      "explanationUr": "مربعوں کا فرق: x² - 9 = (x-3)(x+3)۔"
+    },
+    {
+      "question": "If a = 2, b = 3, what is a² + b²?",
+      "questionUr": "اگر a = 2، b = 3، تو a² + b² کیا ہے؟",
+      "options": ["13", "10", "11", "12"],
+      "correctIndex": 0,
+      "difficulty": "Easy",
+      "explanation": "2² + 3² = 4 + 9 = 13.",
+      "explanationUr": "2² + 3² = 4 + 9 = 13۔"
+    },
+    {
+      "question": "Solve: 3(x - 1) = 9",
+      "questionUr": "حل کریں: 3(x - 1) = 9",
+      "options": ["x = 2", "x = 3", "x = 4", "x = 5"],
+      "correctIndex": 2,
+      "difficulty": "Medium",
+      "explanation": "x - 1 = 3, so x = 4.",
+      "explanationUr": "x - 1 = 3، اس لیے x = 4۔"
+    }
+  ]
+}

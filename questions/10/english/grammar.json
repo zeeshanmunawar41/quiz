@@ -1,0 +1,52 @@
+{
+  "subject": "English",
+  "class": "10",
+  "chapter": "Grammar",
+  "questions": [
+    {
+      "question": "Choose the correct sentence:",
+      "questionUr": "صحیح جملہ منتخب کریں:",
+      "options": ["He don't like tea.", "He doesn't likes tea.", "He doesn't like tea.", "He not like tea."],
+      "correctIndex": 2,
+      "difficulty": "Easy",
+      "explanation": "Negative present simple with 'he' uses 'doesn't' + base verb 'like'.",
+      "explanationUr": "منفی حال سادہ 'he' کے ساتھ 'doesn't' + بنا فعل 'like' آتا ہے۔"
+    },
+    {
+      "question": "The word 'benevolent' means:",
+      "questionUr": "لفظ 'benevolent' کا مطلب ہے:",
+      "options": ["Cruel", "Kind", "Lazy", "Rich"],
+      "correctIndex": 1,
+      "difficulty": "Medium",
+      "explanation": "'Benevolent' describes someone who is well-meaning and kind.",
+      "explanationUr": "'Benevolent' کسی مہربان اور نیک خواہشمند شخص کے لیے استعمال ہوتا ہے۔"
+    },
+    {
+      "question": "Identify the tense: 'They had finished before we arrived.'",
+      "questionUr": "زمانہ پہچانیں: 'They had finished before we arrived.'",
+      "options": ["Past simple", "Past perfect", "Present perfect", "Future continuous"],
+      "correctIndex": 1,
+      "difficulty": "Hard",
+      "explanation": "'had finished' is past perfect, showing an action completed before another past action.",
+      "explanationUr": "'had finished' ماضی تام ہے، جو بتاتا ہے کہ کام دوسرے ماضی کے عمل سے پہلے مکمل ہوا۔"
+    },
+    {
+      "question": "Choose the correct preposition: 'She is good ___ mathematics.'",
+      "questionUr": "صحیح حرف جار منتخب کریں: 'She is good ___ mathematics.'",
+      "options": ["in", "at", "on", "with"],
+      "correctIndex": 1,
+      "difficulty": "Medium",
+      "explanation": "We say 'good at' a subject or skill.",
+      "explanationUr": "مضمون یا مہارت کے لیے 'good at' استعمال ہوتا ہے۔"
+    },
+    {
+      "question": "What is the antonym of 'expand'?",
+      "questionUr": "'expand' کا متضاد کیا ہے؟",
+      "options": ["Contract", "Extend", "Grow", "Spread"],
+      "correctIndex": 0,
+      "difficulty": "Easy",
+      "explanation": "'Contract' means to become smaller, the opposite of 'expand'.",
+      "explanationUr": "'Contract' کا مطلب چھوٹا ہونا ہے، جو 'expand' کی ضد ہے۔"
+    }
+  ]
+}

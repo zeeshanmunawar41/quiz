@@ -1,0 +1,52 @@
+{
+  "subject": "Physics",
+  "class": "10",
+  "chapter": "Electricity",
+  "questions": [
+    {
+      "question": "The unit of electric current is:",
+      "questionUr": "برقی رو کی اکائی کیا ہے؟",
+      "options": ["Volt", "Ampere", "Ohm", "Watt"],
+      "correctIndex": 1,
+      "difficulty": "Easy",
+      "explanation": "Electric current is measured in amperes (A).",
+      "explanationUr": "برقی رو کو امپیئر (A) میں ناپا جاتا ہے۔"
+    },
+    {
+      "question": "Ohm's law states:",
+      "questionUr": "اوہم کا قانون بیان کرتا ہے:",
+      "options": ["V = I/R", "V = IR", "I = VR", "R = VI"],
+      "correctIndex": 1,
+      "difficulty": "Medium",
+      "explanation": "Ohm's law: V = I × R (voltage = current × resistance).",
+      "explanationUr": "اوہم کا قانون: V = I × R (وولٹیج = رو × مزاحمت)۔"
+    },
+    {
+      "question": "Which material is a good conductor?",
+      "questionUr": "کون سی چیز اچھی کنڈکٹر ہے؟",
+      "options": ["Wood", "Copper", "Rubber", "Plastic"],
+      "correctIndex": 1,
+      "difficulty": "Easy",
+      "explanation": "Copper has free electrons and conducts electricity well.",
+      "explanationUr": "تانبے میں آزاد الیکٹران ہوتے ہیں اور یہ بجلی اچھی طرح چلاتا ہے۔"
+    },
+    {
+      "question": "If V = 12 V and R = 4 Ω, current I is:",
+      "questionUr": "اگر V = 12 V اور R = 4 Ω، تو رو I ہے:",
+      "options": ["3 A", "48 A", "0.33 A", "16 A"],
+      "correctIndex": 0,
+      "difficulty": "Medium",
+      "explanation": "I = V/R = 12/4 = 3 A.",
+      "explanationUr": "I = V/R = 12/4 = 3 A۔"
+    },
+    {
+      "question": "In a series circuit, total resistance is:",
+      "questionUr": "سیریز سرکٹ میں کل مزاحمت ہوتی ہے:",
+      "options": ["The smallest resistor", "The sum of all resistors", "The average", "Zero"],
+      "correctIndex": 1,
+      "difficulty": "Hard",
+      "explanation": "In series, R_total = R1 + R2 + ... (resistors add up).",
+      "explanationUr": "سیریز میں R_total = R1 + R2 + ... (مزاحمتیں جمع ہو جاتی ہیں)۔"
+    }
+  ]
+}

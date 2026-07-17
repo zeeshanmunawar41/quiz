@@ -1,0 +1,52 @@
+{
+  "subject": "Chemistry",
+  "class": "10",
+  "chapter": "Acids & Bases",
+  "questions": [
+    {
+      "question": "A substance with pH less than 7 is:",
+      "questionUr": "وہ مادہ جس کا pH 7 سے کم ہو وہ ہے:",
+      "options": ["Acidic", "Basic", "Neutral", "Salty"],
+      "correctIndex": 0,
+      "difficulty": "Easy",
+      "explanation": "pH < 7 indicates an acidic solution.",
+      "explanationUr": "pH < 7 تیزابی محلول کو ظاہر کرتا ہے۔"
+    },
+    {
+      "question": "Which is a common base?",
+      "questionUr": "عام بیس (الکلی) کون سی ہے؟",
+      "options": ["Vinegar", "Lemon juice", "Soap solution", "Hydrochloric acid"],
+      "correctIndex": 2,
+      "difficulty": "Easy",
+      "explanation": "Soap solution is basic (alkaline) in nature.",
+      "explanationUr": "صابن کا محلول نوعیتاً الکلی (basic) ہوتا ہے۔"
+    },
+    {
+      "question": "Litmus paper turns red in:",
+      "questionUr": "نیلے لٹمس کاغذ کس میں سرخ ہو جاتا ہے؟",
+      "options": ["Acid", "Base", "Water", "Salt"],
+      "correctIndex": 0,
+      "difficulty": "Easy",
+      "explanation": "Blue litmus turns red in acidic solutions.",
+      "explanationUr": "نیلا لٹمس تیزابی محلول میں سرخ ہو جاتا ہے۔"
+    },
+    {
+      "question": "Neutralization reaction produces:",
+      "questionUr": "تعدیل (neutralization) تعامل پیدا کرتا ہے:",
+      "options": ["Acid + Base", "Salt + Water", "Gas only", "Metal + Acid"],
+      "correctIndex": 1,
+      "difficulty": "Medium",
+      "explanation": "Acid + base → salt + water.",
+      "explanationUr": "تیزاب + بیس → نمک + پانی۔"
+    },
+    {
+      "question": "The formula of sulphuric acid is:",
+      "questionUr": "سلفیورک ایسڈ کا فارمولا ہے:",
+      "options": ["HCl", "HNO3", "H2SO4", "CH3COOH"],
+      "correctIndex": 2,
+      "difficulty": "Medium",
+      "explanation": "Sulphuric acid is H2SO4.",
+      "explanationUr": "سلفیورک ایسڈ H2SO4 ہے۔"
+    }
+  ]
+}

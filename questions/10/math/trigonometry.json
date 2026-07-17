@@ -1,0 +1,52 @@
+{
+  "subject": "Mathematics",
+  "class": "10",
+  "chapter": "Trigonometry",
+  "questions": [
+    {
+      "question": "sin(90°) equals:",
+      "questionUr": "sin(90°) برابر ہے:",
+      "options": ["0", "1", "0.5", "-1"],
+      "correctIndex": 1,
+      "difficulty": "Easy",
+      "explanation": "sin(90°) = 1.",
+      "explanationUr": "sin(90°) = 1۔"
+    },
+    {
+      "question": "In a right triangle, tan θ = ?",
+      "questionUr": "قائمہ مثلث میں tan θ = ؟",
+      "options": ["opposite/hypotenuse", "adjacent/hypotenuse", "opposite/adjacent", "hypotenuse/opposite"],
+      "correctIndex": 2,
+      "difficulty": "Medium",
+      "explanation": "tan θ = opposite side / adjacent side.",
+      "explanationUr": "tan θ = عمودی / قاعدہ۔"
+    },
+    {
+      "question": "cos(0°) equals:",
+      "questionUr": "cos(0°) برابر ہے:",
+      "options": ["0", "1", "-1", "0.5"],
+      "correctIndex": 1,
+      "difficulty": "Easy",
+      "explanation": "cos(0°) = 1.",
+      "explanationUr": "cos(0°) = 1۔"
+    },
+    {
+      "question": "If sin θ = 3/5, then cos θ (for acute θ) is:",
+      "questionUr": "اگر sin θ = 3/5، تو cos θ (نوک زاویہ کے لیے) ہے:",
+      "options": ["4/5", "3/4", "5/3", "1/5"],
+      "correctIndex": 0,
+      "difficulty": "Hard",
+      "explanation": "Using sin²θ + cos²θ = 1: cos θ = √(1 - 9/25) = √(16/25) = 4/5.",
+      "explanationUr": "sin²θ + cos²θ = 1 استعمال کرتے ہوئے: cos θ = √(1 - 9/25) = √(16/25) = 4/5۔"
+    },
+    {
+      "question": "The value of sin²θ + cos²θ is always:",
+      "questionUr": "sin²θ + cos²θ کی قیمت ہمیشہ ہوتی ہے:",
+      "options": ["0", "1", "2", "θ"],
+      "correctIndex": 1,
+      "difficulty": "Medium",
+      "explanation": "This is the fundamental Pythagorean identity: sin²θ + cos²θ = 1.",
+      "explanationUr": "یہ بنیادی مسلمہ ہے: sin²θ + cos²θ = 1۔"
+    }
+  ]
+}

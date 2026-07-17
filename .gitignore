@@ -1,0 +1,11 @@
+# OS / editor files
+.DS_Store
+Thumbs.db
+*.log
+
+# Local env / secrets (never commit real keys)
+.env
+.env.local
+
+# Node (not used, but safe)
+node_modules/

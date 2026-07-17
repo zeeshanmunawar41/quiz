@@ -1,0 +1,52 @@
+{
+  "subject": "Physics",
+  "class": "9",
+  "chapter": "Motion",
+  "questions": [
+    {
+      "question": "What is the SI unit of speed?",
+      "questionUr": "رفتار کی ایس آئی اکائی کیا ہے؟",
+      "options": ["m/s", "km/h", "s/m", "N"],
+      "correctIndex": 0,
+      "difficulty": "Easy",
+      "explanation": "Speed = distance/time, so its SI unit is metres per second (m/s).",
+      "explanationUr": "رفتار = فاصلہ/وقت، اس لیے ایس آئی اکائی میٹر فی سیکنڈ (m/s) ہے۔"
+    },
+    {
+      "question": "A body moving with constant speed in a circle has:",
+      "questionUr": "ایک جسم یکساں رفتار سے دائرے میں حرکت کر رہا ہے تو اس کی:",
+      "options": ["Zero acceleration", "Constant velocity", "Changing velocity", "No motion"],
+      "correctIndex": 2,
+      "difficulty": "Hard",
+      "explanation": "Direction changes continuously, so velocity (which includes direction) changes.",
+      "explanationUr": "سمت مسلسل بدلتی ہے، اس لیے ولوسٹی (جس میں سمت شامل ہے) بدلتی ہے۔"
+    },
+    {
+      "question": "Acceleration is the rate of change of:",
+      "questionUr": "تیزی کس کی تبدیلی کی شرح ہے؟",
+      "options": ["Distance", "Velocity", "Mass", "Force"],
+      "correctIndex": 1,
+      "difficulty": "Medium",
+      "explanation": "Acceleration = change in velocity / time.",
+      "explanationUr": "تیزی = ولوسٹی میں تبدیلی / وقت۔"
+    },
+    {
+      "question": "Which quantity is a vector?",
+      "questionUr": "کون سی مقدار سمتیہ (vector) ہے؟",
+      "options": ["Speed", "Distance", "Velocity", "Time"],
+      "correctIndex": 2,
+      "difficulty": "Medium",
+      "explanation": "Velocity has both magnitude and direction, so it is a vector.",
+      "explanationUr": "ولوسٹی میں مقدار اور سمت دونوں ہوتے ہیں، اس لیے یہ سمتیہ ہے۔"
+    },
+    {
+      "question": "If a car covers 100 m in 20 s, its speed is:",
+      "questionUr": "اگر ایک کار 20 سیکنڈ میں 100 میٹر طے کرے تو اس کی رفتار ہے:",
+      "options": ["5 m/s", "2000 m/s", "0.2 m/s", "120 m/s"],
+      "correctIndex": 0,
+      "difficulty": "Easy",
+      "explanation": "Speed = 100 m / 20 s = 5 m/s.",
+      "explanationUr": "رفتار = 100 میٹر / 20 سیکنڈ = 5 میٹر فی سیکنڈ۔"
+    }
+  ]
+}

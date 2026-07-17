@@ -1,0 +1,19 @@
+{
+  "name": "Quiz Platform",
+  "short_name": "Quiz",
+  "description": "Free bilingual MCQ quiz platform for Pakistan Secondary Classes 9 & 10",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f1f5f9",
+  "theme_color": "#2563eb",
+  "lang": "en",
+  "dir": "ltr",
+  "icons": [
+    {
+      "src": "images/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
