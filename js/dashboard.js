@@ -3,9 +3,17 @@
   "use strict";
 
   async function render() {
-    const results = await window.Storage.getResults();
     const statsEl = document.getElementById("dashStats");
     const historyEl = document.getElementById("dashHistory");
+    let results;
+    try {
+      results = await window.Storage.getResults();
+    } catch (err) {
+      // Task 12: network/database failure should not crash the dashboard.
+      statsEl.innerHTML = "";
+      historyEl.innerHTML = `<p class="msg error">${window.I18N.t("no_history")}</p>`;
+      return;
+    }
 
     if (!results || results.length === 0) {
       statsEl.innerHTML = "";
@@ -16,7 +24,6 @@
     const totalQuizzes = results.length;
     const totalMCQs = results.reduce((s, r) => s + (r.total || 0), 0);
     const totalCorrect = results.reduce((s, r) => s + (r.score || 0), 0);
-    const overallAcc = totalMCQs ? Math.round((totalCorrect / totalMCQs) * 100) : 0;
     const streak = window.Storage.getStreak().count;
 
     // Subject-wise accuracy
@@ -37,6 +44,11 @@
 
     const last = results[0];
     const lastDate = new Date(last.taken_at || last.takenAt).toLocaleDateString();
+
+    // Use stored percentage when available (new schema), else compute.
+    const overallAcc = results[0].percentage != null
+      ? Math.round(results.reduce((s, r) => s + (r.percentage || 0), 0) / results.length)
+      : (totalMCQs ? Math.round((totalCorrect / totalMCQs) * 100) : 0);
 
     statsEl.innerHTML = `
       ${statCard(overallAcc + "%", window.I18N.t("overall_accuracy"))}

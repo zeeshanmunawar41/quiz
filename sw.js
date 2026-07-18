@@ -1,15 +1,19 @@
 // sw.js — Service worker: cache app shell for offline PWA support
 const CACHE_NAME = "quiz-platform-v1";
+// Task 11: config.js and auth-related code are NEVER cached. They must always
+// be fetched fresh so credential/feature-flag changes apply immediately and
+// Supabase auth state is never served from a stale cache.
+const NEVER_CACHE = ["config.js", "auth.js", "storage.js"];
 const ASSETS = [
   "./",
   "index.html",
   "css/styles.css",
-  "js/config.js",
   "js/i18n.js",
-  "js/storage.js",
-  "js/auth.js",
   "js/quiz.js",
   "js/dashboard.js",
+  "js/progress.js",
+  "js/leaderboard.js",
+  "js/questions.js",
   "js/app.js",
   "manifest.json",
 ];
@@ -35,8 +39,14 @@ self.addEventListener("fetch", (event) => {
   if (req.method !== "GET") return;
 
   const url = new URL(req.url);
-  // Never cache cross-origin requests (e.g. Supabase CDN / API).
+  // Never cache cross-origin requests (e.g. Supabase CDN / API / auth).
   if (url.origin !== self.location.origin) return;
+
+  // Task 11: never cache config/auth/storage JS — always go to network.
+  if (NEVER_CACHE.some((f) => url.pathname.endsWith("/" + f))) {
+    event.respondWith(fetch(req));
+    return;
+  }
 
   // Network-first for question JSON (always fresh), cache-first for shell.
   if (url.pathname.includes("/questions/")) {

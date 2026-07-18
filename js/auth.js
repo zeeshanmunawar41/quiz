@@ -17,7 +17,13 @@
       });
       // Restore a previously saved session into the Supabase client so the
       // user stays logged in across page reloads (critical for GitHub Pages).
-      window.Storage.restoreSession();
+      // Task 3: if a valid session exists, keep the user logged in and send
+      // them straight to the class selection screen — no re-login prompt.
+      window.Storage.restoreSession().then(() => {
+        if (window.Auth.isLoggedIn()) {
+          window.App.navigate("classSelect");
+        }
+      });
     }
     restoreSession();
   }
@@ -65,7 +71,15 @@
     let result;
     try {
       if (mode === "register") {
-        result = await supabase.auth.signUp({ email, password });
+        // Task 2: send the email-confirmation link back to the app.
+        // On GitHub Pages the site lives at /quiz/, so the redirect URL must
+        // include that subpath or the token in the URL will never be read.
+        const redirectUrl = window.location.origin + "/quiz/";
+        result = await supabase.auth.signUp({
+          email,
+          password,
+          options: { emailRedirectTo: redirectUrl },
+        });
       } else {
         result = await supabase.auth.signInWithPassword({ email, password });
       }

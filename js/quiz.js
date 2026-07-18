@@ -7,13 +7,11 @@
   let state = null; // active quiz state
   let timerId = null;
 
-  // ---- Question loading ----
+  // ---- Question loading (delegated to the QuestionSource abstraction) ----
+  // Task 8/9: quiz.js no longer knows where questions come from. Swapping
+  // JSON for Supabase later requires no change here.
   async function loadQuestions(classLevel, subject, chapter) {
-    const path = `questions/${classLevel}/${subject}/${chapter}.json`;
-    const res = await fetch(path);
-    if (!res.ok) throw new Error("Failed to load " + path);
-    const data = await res.json();
-    return data.questions || [];
+    return window.QuestionSource.load(classLevel, subject, chapter);
   }
 
   // ---- Shuffle helpers ----

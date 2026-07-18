@@ -43,7 +43,10 @@
     const target = document.getElementById(screenId);
     if (target) target.classList.add("active");
     window.scrollTo(0, 0);
+    // Lazy-render data screens only when shown (Task 11: avoid work until needed).
     if (screenId === "dashboard") window.Dashboard.render();
+    if (screenId === "progress") window.Progress.render();
+    if (screenId === "leaderboard") window.Leaderboard.render();
   }
 
   function toast(msg) {
@@ -154,6 +157,10 @@
     // Results controls
     document.getElementById("toDashboardBtn").addEventListener("click", () => navigate("dashboard"));
     document.getElementById("retryBtn").addEventListener("click", () => navigate("quizConfig"));
+
+    // Dashboard -> Progress / Leaderboard
+    document.getElementById("toProgressBtn").addEventListener("click", () => navigate("progress"));
+    document.getElementById("toLeaderboardBtn").addEventListener("click", () => navigate("leaderboard"));
 
     // Logout
     document.getElementById("logoutBtn").addEventListener("click", () => {

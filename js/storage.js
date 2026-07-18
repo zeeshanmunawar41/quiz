@@ -7,7 +7,21 @@
 
   function initSupabase() {
     if (CFG.SUPABASE_ENABLED && window.supabase && CFG.SUPABASE_URL !== "https://YOUR-PROJECT.supabase.co") {
-      supabase = window.supabase.createClient(CFG.SUPABASE_URL, CFG.SUPABASE_ANON_KEY);
+      // WHY these auth options (Task 1):
+      // - persistSession:true  -> Supabase stores the session in localStorage so the
+      //   user stays logged in across page reloads (critical on GitHub Pages, where
+      //   every navigation is a full page load).
+      // - autoRefreshToken:true -> Supabase silently refreshes the JWT before it expires,
+      //   preventing "expired session" errors during a quiz.
+      // - detectSessionInUrl:true -> reads the ?code=... token from the email-confirmation
+      //   redirect link and completes the login (Task 2) without extra code.
+      supabase = window.supabase.createClient(CFG.SUPABASE_URL, CFG.SUPABASE_ANON_KEY, {
+        auth: {
+          persistSession: true,
+          autoRefreshToken: true,
+          detectSessionInUrl: true,
+        },
+      });
     }
     return supabase;
   }
@@ -85,18 +99,29 @@
   }
 
   // ---- Results persistence (Supabase or local) ----
+  // Task 12: classify failures into friendly messages. Never throw to the UI;
+  // guest fallback keeps the app usable offline.
   async function saveResult(result) {
     const session = getSession();
     if (supabase && session && session.user) {
+      const pct = result.total ? Math.round((result.score / result.total) * 100) : 0;
       const { error } = await supabase.from("quiz_results").insert({
         user_id: session.user.id,
-        quiz_id: result.quizId,
+        class: result.classLevel,
+        subject: result.subject,
+        chapter: result.chapter,
+        difficulty: result.difficulty || "all",
         score: result.score,
         total: result.total,
+        percentage: pct,
         time_taken: result.timeTaken,
         taken_at: result.takenAt,
       });
-      if (error) console.warn("Supabase insert failed:", error.message);
+      if (error) {
+        console.warn("Supabase insert failed:", error.message);
+        // Fall back to local so the student never loses their attempt.
+        addGuestResult(result);
+      }
     } else {
       addGuestResult(result);
     }
@@ -112,7 +137,7 @@
         .order("taken_at", { ascending: false });
       if (error) {
         console.warn("Supabase select failed:", error.message);
-        return [];
+        return getGuestHistory();
       }
       return data || [];
     }
