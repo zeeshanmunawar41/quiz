@@ -2,10 +2,10 @@
 // Replace these with your own Supabase project credentials.
 // The app degrades gracefully (guest mode) if these are left as placeholders.
 window.APP_CONFIG = {
-  SUPABASE_URL: "https://YOUR-PROJECT.supabase.co",
-  SUPABASE_ANON_KEY: "YOUR-ANON-KEY",
+  SUPABASE_URL: "https://nleeiypwmslovpvhbeki.supabase.co",
+  SUPABASE_ANON_KEY: "sb_publishable_vKZtYkvaynxCLSGsT0tzmQ_2g9Spseg",
   // When false, the app runs fully in guest/local mode without Supabase.
-  SUPABASE_ENABLED: false,
+  SUPABASE_ENABLED: true,
   TIME_PER_QUESTION: 60, // seconds
   STORAGE_KEYS: {
     LANG: "quiz_lang",
