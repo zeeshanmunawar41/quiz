@@ -53,6 +53,15 @@ quiz/
    - Copy the project URL + anon key into `js/config.js`
      (`SUPABASE_URL`, `SUPABASE_ANON_KEY`) and set `SUPABASE_ENABLED = true`.
    - Enable Email auth in Supabase Auth settings.
+   - **Important:** In Supabase **Auth → Providers → Email**, decide whether
+     email confirmation is required. If it is ON (default), new users must click
+     the confirmation link before they can log in. To let students log in
+     immediately (no email confirm), turn **Confirm email** OFF — but only if
+     that fits your security needs. The app already handles both cases with a
+     clear message.
+   - Add your GitHub Pages URL (e.g. `https://zeeshanmunawar41.github.io/quiz/`)
+     to Supabase **Auth → URL Configuration → Redirect URLs** so OAuth/callback
+     flows (if used later) are allowed.
 3. **Guest mode** works out of the box with no configuration.
 
 ## Adding Questions

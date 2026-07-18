@@ -9,6 +9,16 @@
   function init() {
     supabase = window.Storage.initSupabase();
     bindEvents();
+    if (supabase) {
+      // Keep the local session in sync with Supabase (handles expiry/refresh).
+      supabase.auth.onAuthStateChange((_event, session) => {
+        if (session) window.Storage.saveSession(session);
+        else window.Storage.clearSession();
+      });
+      // Restore a previously saved session into the Supabase client so the
+      // user stays logged in across page reloads (critical for GitHub Pages).
+      window.Storage.restoreSession();
+    }
     restoreSession();
   }
 
@@ -25,8 +35,7 @@
     const toggle = document.getElementById("authToggleMode");
     const title = document.querySelector("#auth h2");
     if (mode === "register") {
-      submit.textContent = window.I18N.t("login").includes("Register") ? "Register" : "Register";
-      submit.textContent = "Register";
+      submit.textContent = window.I18N.t("login") === "Register" ? window.I18N.t("login") : "Register";
       toggle.textContent = window.I18N.t("have_account");
       title.textContent = "Student Register";
     } else {
@@ -50,35 +59,54 @@
       return;
     }
 
-    let result;
-    if (mode === "register") {
-      result = await supabase.auth.signUp({ email, password });
-    } else {
-      result = await supabase.auth.signInWithPassword({ email, password });
-    }
+    msg.textContent = window.I18N.t("loading");
+    msg.className = "msg";
 
-    if (result.error) {
-      msg.textContent = result.error.message;
+    let result;
+    try {
+      if (mode === "register") {
+        result = await supabase.auth.signUp({ email, password });
+      } else {
+        result = await supabase.auth.signInWithPassword({ email, password });
+      }
+    } catch (err) {
+      msg.textContent = err.message || "Network error. Check your connection.";
       msg.className = "msg error";
       return;
     }
 
-    const session = result.data.session || (result.data.user ? { user: result.data.user } : null);
+    if (result.error) {
+      // Common GitHub Pages / Supabase case: email not confirmed yet.
+      if (/confirm/i.test(result.error.message)) {
+        msg.textContent = "Please confirm your email, then log in.";
+      } else {
+        msg.textContent = result.error.message;
+      }
+      msg.className = "msg error";
+      return;
+    }
+
+    const session = result.data.session;
     if (session) {
       window.Storage.saveSession(session);
       msg.textContent = "Success!";
       msg.className = "msg success";
       window.App.navigate("classSelect");
     } else {
-      msg.textContent = "Check your email to confirm registration.";
+      // signUp succeeded but email confirmation is required by Supabase.
+      msg.textContent = "Account created. Check your email to confirm, then log in.";
       msg.className = "msg success";
+      mode = "login";
+      toggleMode();
     }
   }
 
   function restoreSession() {
     const session = window.Storage.getSession();
     if (session && session.user) {
-      // Optionally navigate directly; left to app controller.
+      // Session is already restored into the Supabase client by
+      // Storage.restoreSession(); here we just expose login state.
+      // Optionally auto-navigate returning users to the class screen.
     }
   }
 

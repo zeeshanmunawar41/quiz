@@ -12,6 +12,24 @@
     return supabase;
   }
 
+  // Restore a previously saved session into the Supabase client so the user
+  // remains authenticated after a page reload (important on GitHub Pages,
+  // where each navigation is a full page load).
+  async function restoreSession() {
+    if (!supabase) return;
+    const session = getSession();
+    if (session && session.access_token && session.refresh_token) {
+      const { error } = await supabase.auth.setSession({
+        access_token: session.access_token,
+        refresh_token: session.refresh_token,
+      });
+      if (error) {
+        console.warn("Session restore failed:", error.message);
+        clearSession();
+      }
+    }
+  }
+
   // ---- Local helpers ----
   function getJSON(key, fallback) {
     try {
@@ -103,6 +121,8 @@
 
   window.Storage = {
     initSupabase,
+    restoreSession,
+    getClient: () => supabase,
     getGuestHistory,
     addGuestResult,
     getStreak,
